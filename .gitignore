@@ -1,5 +1,42 @@
-node_modules
-# Keep environment variables out of version control
-.env
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
 
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Build outputs
+dist/
+build/
+out/
+.next/
+
+# Testing
+coverage/
+.nyc_output/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Prisma
 /generated/prisma
+prisma/migrations/dev.db
+prisma/dev.db
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+.turbo/
+
+# AWS Lambda
+.serverless/
+serverless/.build/
