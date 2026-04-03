@@ -1,0 +1,37 @@
+{
+  "name": "task-manager-api",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "migrate:dev": "npx prisma migrate dev",
+    "db:push": "prisma db push",
+    "test:watch": "set PORT=3334 && node --experimental-vm-modules node_modules/jest/bin/jest.js --watchAll",
+    "test": "set PORT=3334 && node --experimental-vm-modules node_modules/jest/bin/jest.js --runInBand",
+    "test:cov": "set PORT=3334 && node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage --runInBand"
+  },
+  "dependencies": {
+    "@fastify/aws-lambda": "^6.4.0",
+    "@fastify/jwt": "^10.0.0",
+    "@fastify/swagger": "^9.7.0",
+    "@fastify/swagger-ui": "^5.2.5",
+    "@prisma/client": "^6.19.3",
+    "bcryptjs": "^2.4.3",
+    "fastify": "^5.8.4",
+    "postgres": "^3.4.4",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^10.4.0",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^20.19.37",
+    "@types/supertest": "^7.2.0",
+    "jest": "^30.3.0",
+    "prisma": "^6.19.3",
+    "supertest": "^7.2.2",
+    "ts-jest": "^29.4.9",
+    "tsx": "^4.11.0",
+    "typescript": "^5.4.5"
+  }
+}
