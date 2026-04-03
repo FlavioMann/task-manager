@@ -140,6 +140,14 @@ npm run test:watch
 npm run test:cov
 ```
 
+## 📮 Postman Collection
+
+Importe a collection do Postman para testar todos os endpoints:
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://web.postman.co/workspace/2f51588e-c2b9-4a31-8704-bf68dab0b99b/collection/17607153-08a59f2f-78ff-4f16-88e2-e76ef1a3625d?action=share&source=copy-link&creator=17607153)
+
+Ou copie o link: https://web.postman.co/workspace/2f51588e-c2b9-4a31-8704-bf68dab0b99b/collection/17607153-08a59f2f-78ff-4f16-88e2-e76ef1a3625d?action=share&source=copy-link&creator=17607153
+
 ## 🏗️ Arquitetura
 
 ```
