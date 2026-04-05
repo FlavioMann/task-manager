@@ -188,6 +188,61 @@ export const updateTaskStatusDoc = {
   },
 };
 
+export const deleteTaskDoc = {
+  schema: {
+    summary: "",
+    description:
+      "Remove permanentemente uma tarefa. Apenas o dono da tarefa pode excluí-la.",
+    tags: ["tasks"],
+    security: [{ bearerAuth: [] }],
+    params: {
+      type: "object",
+      properties: {
+        id: {
+          type: "string",
+          format: "uuid",
+          description: "ID da tarefa a ser excluída",
+        },
+      },
+    },
+    response: {
+      204: {
+        description: "Tarefa excluída com sucesso",
+        type: "null",
+      },
+      400: {
+        description: "ID inválido",
+        type: "object",
+        properties: {
+          message: { type: "string" },
+          errors: { type: "object", additionalProperties: true },
+        },
+      },
+      401: {
+        description: "Token ausente ou inválido",
+        type: "object",
+        properties: {
+          message: { type: "string" },
+        },
+      },
+      404: {
+        description: "Tarefa não encontrada ou sem permissão",
+        type: "object",
+        properties: {
+          message: { type: "string" },
+        },
+      },
+      500: {
+        description: "Erro interno no servidor",
+        type: "object",
+        properties: {
+          message: { type: "string" },
+        },
+      },
+    },
+  },
+};
+
 export const shareTaskDoc = {
   schema: {
     summary: "",

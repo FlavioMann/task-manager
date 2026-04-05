@@ -15,6 +15,7 @@ import { getMetricsRoute } from "./routes/get-metrics.js";
 import { updateTaskStatusRoute } from "./routes/update-task-status.js";
 import { shareTaskRoute } from "./routes/share-task.js";
 import { getTasksRoute } from "./routes/get-tasks.js";
+import { deleteTaskRoute } from "./routes/delete-task.js";
 
 export const app = fastify();
 
@@ -60,6 +61,7 @@ app.register(getMetricsRoute);
 app.register(updateTaskStatusRoute);
 app.register(shareTaskRoute);
 app.register(getTasksRoute);
+app.register(deleteTaskRoute);
 
 const isTestEnv = process.env.NODE_ENV === "test";
 const isLambdaEnv = !!(
