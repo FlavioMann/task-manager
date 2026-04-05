@@ -1,4 +1,5 @@
 import fastify from "fastify";
+import cors from "@fastify/cors";
 import jwt from "@fastify/jwt";
 import process from "node:process";
 import swagger from "@fastify/swagger";
@@ -16,6 +17,12 @@ import { shareTaskRoute } from "./routes/share-task.js";
 import { getTasksRoute } from "./routes/get-tasks.js";
 
 export const app = fastify();
+
+app.register(cors, {
+  origin: process.env.CORS_ORIGIN ?? "http://localhost:5173",
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+});
 
 app.register(jwt, {
   secret: process.env.JWT_SECRET || "default_secret_key",
