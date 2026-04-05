@@ -8,7 +8,13 @@ export async function getMetricsRoute(app: FastifyInstance) {
       await request.jwtVerify();
       const userId = request.user.sub;
 
-      const [totalTasks, completedTasks, tasksByCategory] = await Promise.all([
+      const [
+        totalTasks,
+        completedTasks,
+        pendingTasks,
+        inProgressTasks,
+        tasksByCategory,
+      ] = await Promise.all([
         prisma.task.count({
           where: { ownerId: userId },
         }),
@@ -17,6 +23,20 @@ export async function getMetricsRoute(app: FastifyInstance) {
           where: {
             ownerId: userId,
             status: "COMPLETED",
+          },
+        }),
+
+        prisma.task.count({
+          where: {
+            ownerId: userId,
+            status: "PENDING",
+          },
+        }),
+
+        prisma.task.count({
+          where: {
+            ownerId: userId,
+            status: "IN_PROGRESS",
           },
         }),
 
@@ -35,7 +55,8 @@ export async function getMetricsRoute(app: FastifyInstance) {
       return reply.send({
         totalTasks,
         completedTasks,
-        pendingTasks: totalTasks - completedTasks,
+        pendingTasks,
+        inProgressTasks,
         progressPercentage: `${progressPercentage}%`,
         tasksByCategory,
       });

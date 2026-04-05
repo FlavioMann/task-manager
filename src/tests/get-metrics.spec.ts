@@ -45,7 +45,11 @@ describe("Get Metrics Route (Integration)", () => {
           status: "COMPLETED",
           ownerId: user.id,
         },
-        { title: faker.lorem.sentence(2), status: "PENDING", ownerId: user.id },
+        {
+          title: faker.lorem.sentence(2),
+          status: "IN_PROGRESS",
+          ownerId: user.id,
+        },
       ],
     });
 
@@ -64,7 +68,8 @@ describe("Get Metrics Route (Integration)", () => {
     expect(response.body).toEqual({
       totalTasks: 3,
       completedTasks: 2,
-      pendingTasks: 1,
+      pendingTasks: 0,
+      inProgressTasks: 1,
       progressPercentage: "67%",
       tasksByCategory: expect.any(Array),
     });
@@ -88,6 +93,7 @@ describe("Get Metrics Route (Integration)", () => {
     expect(response.status).toBe(200);
     expect(response.body.progressPercentage).toBe("0%");
     expect(response.body.totalTasks).toBe(0);
+    expect(response.body.inProgressTasks).toBe(0);
   });
 
   test("Deve retornar 500 se o token for inválido (conforme código atual)", async () => {

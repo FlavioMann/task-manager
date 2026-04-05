@@ -2,7 +2,7 @@ export const getMetricsDoc = {
   schema: {
     summary: "",
     description:
-      "Retorna um resumo estatístico das tarefas do usuário, incluindo total, concluídas, pendentes e progresso percentual.",
+      "Retorna um resumo estatístico das tarefas do usuário, incluindo total, concluídas, pendentes, em progresso e progresso percentual.",
     tags: ["metrics"],
     security: [{ bearerAuth: [] }],
     response: {
@@ -21,6 +21,10 @@ export const getMetricsDoc = {
           pendingTasks: {
             type: "integer",
             description: "Quantidade de tarefas pendentes",
+          },
+          inProgressTasks: {
+            type: "integer",
+            description: "Quantidade de tarefas em andamento",
           },
           progressPercentage: {
             type: "string",

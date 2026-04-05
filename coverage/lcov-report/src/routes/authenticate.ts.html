@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.66% </span>
+                <span class="strong">8.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>11/12</span>
+                <span class='fraction'>1/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/6</span>
+                <span class='fraction'>0/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.66% </span>
+                <span class="strong">8.33% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>11/12</span>
+                <span class='fraction'>1/12</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -113,39 +113,39 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -156,24 +156,24 @@ import { FastifyInstance } from "fastify";
 import { authenticateDoc } from "../docs/auth-swagger.js";
 &nbsp;
 export async function authenticateRoute(app: FastifyInstance) {
-  app.post("/sessions", authenticateDoc, async (request, reply) =&gt; {
-    try {
-      const authenticateBodySchema = z.object({
+  app.post("/sessions", authenticateDoc, <span class="fstat-no" title="function not covered" >async </span>(request, reply) =&gt; {
+<span class="cstat-no" title="statement not covered" >    try {</span>
+      const authenticateBodySchema = <span class="cstat-no" title="statement not covered" >z.object({</span>
         email: z.string().email("Formato de e-mail inválido"),
-        password: z.string().min(6, "A senha deve ter no mínimo 6 caracteres"),
+        password: z.string().min(6),
       });
 &nbsp;
-      const { email, password } = authenticateBodySchema.parse(request.body);
+      const { email, password } = <span class="cstat-no" title="statement not covered" >authenticateBodySchema.parse(request.body);</span>
 &nbsp;
-      const user = await prisma.user.findUnique({
+      const user = <span class="cstat-no" title="statement not covered" >await prisma.user.findUnique({</span>
         where: { email },
       });
 &nbsp;
-      if (!user || !(await bcrypt.compare(password, user.password))) {
-        return reply.status(400).send({ message: "Credenciais inválidas." });
+<span class="cstat-no" title="statement not covered" >      if (!user || !(await bcrypt.compare(password, user.password))) {</span>
+<span class="cstat-no" title="statement not covered" >        return reply.status(400).send({ message: "Credenciais inválidas." });</span>
       }
 &nbsp;
-      const token = app.jwt.sign(
+      const token = <span class="cstat-no" title="statement not covered" >app.jwt.sign(</span>
         {},
         {
           sub: user.id,
@@ -181,14 +181,14 @@ export async function authenticateRoute(app: FastifyInstance) {
         },
       );
 &nbsp;
-      return reply.status(200).send({ token });
+<span class="cstat-no" title="statement not covered" >      return reply.status(200).send({ token });</span>
     } catch (error) {
-      <span class="missing-if-branch" title="if path not taken" >I</span>if (error instanceof z.ZodError) {
+<span class="cstat-no" title="statement not covered" >      if (error instanceof z.ZodError) {</span>
 <span class="cstat-no" title="statement not covered" >        return reply.status(400).send({</span>
           message: "Erro de validação",
         });
       }
-      return reply.status(500).send({ message: "Erro interno." });
+<span class="cstat-no" title="statement not covered" >      return reply.status(500).send({ message: "Erro interno." });</span>
     }
   });
 }
@@ -199,7 +199,7 @@ export async function authenticateRoute(app: FastifyInstance) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-04-03T18:39:23.881Z
+                at 2026-04-05T23:00:25.215Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
