@@ -54,7 +54,7 @@ describe("Get Metrics Route (Integration)", () => {
     });
 
     const otherUser = await prisma.user.create({
-      data: { name: "Outro", email: faker.internet.email(), password: "123" },
+      data: { name: "Outro", email: faker.internet.email(), password: hashed },
     });
     await prisma.task.create({
       data: { title: "Ignorar", ownerId: otherUser.id },

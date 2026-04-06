@@ -79,11 +79,12 @@ describe("Get Tasks Route (Integration)", () => {
   });
 
   test("Deve retornar 500 se houver falha no banco de dados", async () => {
+    const hashed500 = await bcrypt.hash("password123", 8);
     const user = await prisma.user.create({
       data: {
         name: faker.person.fullName(),
         email: faker.internet.email(),
-        password: "123",
+        password: hashed500,
       },
     });
     const token = app.jwt.sign({}, { sub: user.id });

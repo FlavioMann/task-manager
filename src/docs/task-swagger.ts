@@ -200,7 +200,6 @@ export const deleteTaskDoc = {
       properties: {
         id: {
           type: "string",
-          format: "uuid",
           description: "ID da tarefa a ser excluída",
         },
       },
@@ -255,7 +254,6 @@ export const shareTaskDoc = {
       properties: {
         id: {
           type: "string",
-          format: "uuid",
           description: "ID da tarefa a ser compartilhada",
         },
       },
@@ -266,7 +264,6 @@ export const shareTaskDoc = {
       properties: {
         email: {
           type: "string",
-          format: "email",
           description: "E-mail do usuário para quem compartilhar a tarefa",
         },
       },
