@@ -4,9 +4,7 @@ import jwt from "@fastify/jwt";
 import process from "node:process";
 import swagger from "@fastify/swagger";
 import swaggerUi from "@fastify/swagger-ui";
-import z from "zod";
 
-// Importação das Rotas
 import { createUserRoute } from "./routes/create-user.js";
 import { authenticateRoute } from "./routes/authenticate.js";
 import { createTaskRoute } from "./routes/create-task.js";
