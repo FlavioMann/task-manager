@@ -85,7 +85,7 @@ describe("User Routes (Integration)", () => {
     const response = await request(app.server).post("/users").send({
       name: faker.person.fullName(),
       email: faker.internet.email(),
-      password: "password123", // Senha pura para a API
+      password: "password123",
     });
 
     expect(response.status).toBe(500);

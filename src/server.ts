@@ -6,9 +6,14 @@ import swagger from "@fastify/swagger";
 import swaggerUi from "@fastify/swagger-ui";
 
 import { createUserRoute } from "./routes/create-user.js";
+import { getUserRoute } from "./routes/get-user.js";
 import { authenticateRoute } from "./routes/authenticate.js";
 import { createTaskRoute } from "./routes/create-task.js";
 import { createCategoryRoute } from "./routes/create-category.js";
+import { getCategoriesRoute } from "./routes/get-categories.js";
+import { getCategoryByIdRoute } from "./routes/get-category-by-id.js";
+import { updateCategoryRoute } from "./routes/update-category.js";
+import { deleteCategoryRoute } from "./routes/delete-category.js";
 import { getMetricsRoute } from "./routes/get-metrics.js";
 import { updateTaskStatusRoute } from "./routes/update-task-status.js";
 import { shareTaskRoute } from "./routes/share-task.js";
@@ -52,9 +57,14 @@ app.register(swaggerUi, {
 });
 
 app.register(createUserRoute);
+app.register(getUserRoute);
 app.register(authenticateRoute);
 app.register(createTaskRoute);
 app.register(createCategoryRoute);
+app.register(getCategoriesRoute);
+app.register(getCategoryByIdRoute);
+app.register(updateCategoryRoute);
+app.register(deleteCategoryRoute);
 app.register(getMetricsRoute);
 app.register(updateTaskStatusRoute);
 app.register(shareTaskRoute);

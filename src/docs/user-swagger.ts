@@ -1,3 +1,40 @@
+export const getUserDoc = {
+  schema: {
+    summary: "",
+    description:
+      "Retorna os dados do usuário autenticado com base no token JWT.",
+    tags: ["users"],
+    security: [{ bearerAuth: [] }],
+    response: {
+      200: {
+        description: "Dados do usuário autenticado",
+        type: "object",
+        properties: {
+          user: {
+            type: "object",
+            properties: {
+              id: { type: "string", format: "uuid" },
+              name: { type: "string" },
+              email: { type: "string", format: "email" },
+              createdAt: { type: "string", format: "date-time" },
+            },
+          },
+        },
+      },
+      401: {
+        description: "Não autorizado (Token ausente ou inválido)",
+        type: "object",
+        properties: { message: { type: "string" } },
+      },
+      404: {
+        description: "Usuário não encontrado",
+        type: "object",
+        properties: { message: { type: "string" } },
+      },
+    },
+  },
+};
+
 export const createUserDoc = {
   schema: {
     summary: "",
