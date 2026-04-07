@@ -107,9 +107,10 @@ JWT_SECRET=sua_chave_secreta_aqui
 
 ## 🔌 Endpoints Principais
 
-### Autenticação
+### Usuários
 
 - `POST /users` - Criar novo usuário
+- `GET /users` - Buscar dados do usuário autenticado
 - `POST /sessions` - Fazer login
 
 ### Tarefas
@@ -117,11 +118,16 @@ JWT_SECRET=sua_chave_secreta_aqui
 - `POST /tasks` - Criar tarefa
 - `GET /tasks` - Listar tarefas
 - `PATCH /tasks/:id/status` - Atualizar status
+- `DELETE /tasks/:id` - Deletar tarefa
 - `POST /tasks/:id/share` - Compartilhar tarefa
 
 ### Categorias
 
 - `POST /categories` - Criar categoria
+- `GET /categories` - Listar categorias
+- `GET /categories/:id` - Buscar categoria por ID
+- `PATCH /categories/:id` - Atualizar categoria
+- `DELETE /categories/:id` - Deletar categoria
 
 ### Métricas
 
